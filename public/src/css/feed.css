@@ -1,0 +1,137 @@
+
+/* =========================================
+   UTEQGRAM - FEED CSS
+   ========================================= */
+
+/* FORMULARIO DE PUBLICACIONES */
+
+
+/* =========================================
+   FORMULARIO DE PUBLICACIONES
+   ========================================= */
+
+#create-post {
+  position: fixed;
+  z-index: 1001;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100dvh;
+
+  overflow-y: auto;
+  overflow-x: hidden;
+
+  background: white;
+  text-align: center;
+
+  /* Oculto inicialmente */
+  transform: translateY(100%);
+  transition: transform 0.3s ease-in-out;
+
+  pointer-events: auto;
+  box-sizing: border-box;
+
+  padding: 70px 15px 30px;
+}
+
+
+/* Formulario abierto */
+
+#create-post[style*="translateY(0)"],
+#create-post[style*="translateY(0px)"] {
+  pointer-events: auto;
+}
+
+/* IMAGEN PRINCIPAL */
+
+.main-image {
+  display: block;
+
+  width: 100%;
+  max-width: 100%;
+
+  height: auto;
+  margin: 0 auto;
+}
+
+/* BOTÓN FLOTANTE */
+
+.floating-button {
+  position: fixed;
+  z-index: 1000;
+
+  bottom: 20px;
+  right: 20px;
+
+  width: 56px;
+  height: 56px;
+
+  padding: 0;
+}
+
+/* FORMULARIO */
+
+.input-section {
+  display: block;
+  margin: 10px auto;
+}
+
+/* TARJETAS DE PUBLICACIONES */
+
+.shared-moment-card.mdl-card {
+  width: 90%;
+  margin: 10px auto;
+}
+
+.shared-moment-card .mdl-card__title {
+  height: 140px;
+}
+
+/* CONTENIDO */
+
+.page-content {
+  width: 100%;
+  box-sizing: border-box;
+  padding-bottom: 100px;
+}
+
+/* RESPONSIVE: TABLET */
+
+@media (min-width: 600px) {
+  .shared-moment-card.mdl-card {
+    width: 60%;
+  }
+}
+
+@media (min-width: 700px) {
+  .shared-moment-card .mdl-card__title {
+    height: 160px;
+  }
+}
+
+/* RESPONSIVE: ESCRITORIO */
+
+@media (min-width: 1000px) {
+  .shared-moment-card.mdl-card {
+    width: 45%;
+  }
+
+  .shared-moment-card .mdl-card__title {
+    height: 200px;
+  }
+}
+
+/* RESPONSIVE: MÓVIL */
+
+@media (max-width: 768px) {
+  .shared-moment-card.mdl-card {
+    width: 94%;
+  }
+
+  .floating-button {
+    bottom: 20px;
+    right: 20px;
+  }
+}
