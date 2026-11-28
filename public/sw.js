@@ -6,7 +6,7 @@ importScripts('/src/js/utility.js');
 // CONFIGURACION
 // ========================================
 
-var CACHE_STATIC_NAME = 'static-v14';
+var CACHE_STATIC_NAME = 'static-v22';
 var CACHE_DYNAMIC_NAME = 'dynamic-v9';
 
 var FIREBASE_URL =

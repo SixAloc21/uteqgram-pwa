@@ -22,17 +22,20 @@
         href="/icons/icon-192.png">
 
   <!-- Fuentes -->
-  <link href="https://fonts.googleapis.com/css?family=Roboto:400,700"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css?family=Roboto:400,700"
+    rel="stylesheet">
 
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
 
   <!-- Material Design Lite -->
-  <link rel="stylesheet"
-        href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.indigo-pink.min.css">
 
-  <!-- Estilos de UTEQGram -->
+  <!-- Estilos -->
   <link rel="stylesheet" href="/src/css/app.css">
   <link rel="stylesheet" href="/src/css/feed.css">
 
@@ -44,6 +47,7 @@
 
   <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
+    <!-- HEADER -->
     <header class="mdl-layout__header">
 
       <div class="mdl-layout__header-row">
@@ -54,13 +58,18 @@
 
         <nav class="mdl-navigation mdl-layout--large-screen-only">
 
-          <a class="mdl-navigation__link" href="/">Feed</a>
+          <a class="mdl-navigation__link" href="/">
+            Feed
+          </a>
 
-          <a class="mdl-navigation__link" href="/help">Help</a>
+          <a class="mdl-navigation__link" href="/help">
+            Help
+          </a>
 
           <div class="drawer-option">
 
             <button
+              type="button"
               class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
 
               Habilitar Notificaciones
@@ -75,20 +84,25 @@
 
     </header>
 
-    <!-- Menú lateral -->
+    <!-- MENÚ LATERAL -->
     <div class="mdl-layout__drawer">
 
       <span class="mdl-layout-title">UTEQGram</span>
 
       <nav class="mdl-navigation">
 
-        <a class="mdl-navigation__link" href="/">Feed</a>
+        <a class="mdl-navigation__link" href="/">
+          Feed
+        </a>
 
-        <a class="mdl-navigation__link" href="/help">Help</a>
+        <a class="mdl-navigation__link" href="/help">
+          Help
+        </a>
 
         <div class="drawer-option">
 
           <button
+            type="button"
             class="enable-notifications mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
 
             Habilitar Notificaciones
@@ -101,44 +115,120 @@
 
     </div>
 
-    <!-- Contenido principal -->
+    <!-- CONTENIDO PRINCIPAL -->
     <main class="mdl-layout__content mat-typography">
 
-      <!-- Formulario de publicaciones -->
+      <!-- FORMULARIO DE PUBLICACIONES -->
       <div id="create-post">
 
         <form>
 
-          <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+          <h5 class="create-post-title">
+            Nueva publicación
+          </h5>
 
-            <input class="mdl-textfield__input"
-                   type="text"
-                   id="title">
+          <!-- TÍTULO -->
+          <div
+            class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
 
-            <label class="mdl-textfield__label"
-                   for="title">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              id="title"
+              maxlength="100"
+              required>
+
+            <label
+              class="mdl-textfield__label"
+              for="title">
+
               Title
+
             </label>
 
           </div>
 
-          <div class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
-               id="manual-location">
+          <!-- UBICACIÓN -->
+          <div
+            class="input-section mdl-textfield mdl-js-textfield mdl-textfield--floating-label"
+            id="manual-location">
 
-            <input class="mdl-textfield__input"
-                   type="text"
-                   id="location">
+            <input
+              class="mdl-textfield__input"
+              type="text"
+              id="location"
+              maxlength="100"
+              required>
 
-            <label class="mdl-textfield__label"
-                   for="location">
+            <label
+              class="mdl-textfield__label"
+              for="location">
+
               Location
+
             </label>
 
           </div>
 
-          <br>
+          <!-- CÁMARA DEL CELULAR -->
+          <div class="camera-section">
 
-          <div>
+            <p class="camera-section-title">
+              Fotografía de la publicación
+            </p>
+
+            <label
+              for="post-image"
+              class="camera-button mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent">
+
+              <i class="material-icons">
+                photo_camera
+              </i>
+
+              Tomar fotografía
+
+            </label>
+
+            <input
+              type="file"
+              id="post-image"
+              name="post-image"
+              accept="image/*"
+              capture="environment"
+              aria-label="Tomar fotografía para la publicación">
+
+            <!-- VISTA PREVIA -->
+            <div
+              id="image-preview-container"
+              hidden>
+
+              <img
+                id="image-preview"
+                alt="Vista previa de la fotografía seleccionada">
+
+              <p class="image-preview-text">
+                Fotografía seleccionada
+              </p>
+
+              <button
+                type="button"
+                id="remove-image-btn"
+                class="mdl-button mdl-js-button mdl-button--accent">
+
+                <i class="material-icons">
+                  delete_outline
+                </i>
+
+                Quitar fotografía
+
+              </button>
+
+            </div>
+
+          </div>
+
+          <!-- BOTÓN DE PUBLICAR -->
+          <div class="post-actions">
 
             <button
               class="mdl-button mdl-js-button mdl-button--raised mdl-button--colored mdl-color--accent"
@@ -151,16 +241,18 @@
 
           </div>
 
-          <br>
-
-          <div>
+          <!-- CERRAR FORMULARIO -->
+          <div class="close-post-section">
 
             <button
               class="mdl-button mdl-js-button mdl-button--fab"
               id="close-create-post-modal-btn"
-              type="button">
+              type="button"
+              aria-label="Cerrar formulario">
 
-              <i class="material-icons">close</i>
+              <i class="material-icons">
+                close
+              </i>
 
             </button>
 
@@ -170,12 +262,13 @@
 
       </div>
 
-      <!-- Imagen principal -->
-      <img src="/src/images/main-image.jpg"
-           alt="UTEQGram"
-           class="main-image">
+      <!-- IMAGEN PRINCIPAL -->
+      <img
+        src="/src/images/main-image.jpg"
+        alt="UTEQGram"
+        class="main-image">
 
-      <!-- Publicaciones -->
+      <!-- PUBLICACIONES -->
       <div class="page-content">
 
         <h5 class="text-center mdl-color-text--primary">
@@ -186,30 +279,36 @@
 
       </div>
 
-      <!-- Botón para crear publicaciones -->
+      <!-- BOTÓN FLOTANTE -->
       <div class="floating-button">
 
         <button
+          type="button"
           class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored"
-          id="share-image-button">
+          id="share-image-button"
+          aria-label="Crear publicación">
 
-          <i class="material-icons">add</i>
+          <i class="material-icons">
+            add
+          </i>
 
         </button>
 
       </div>
 
-      <!-- Notificaciones visuales -->
-      <div id="confirmation-toast"
-           aria-live="assertive"
-           aria-atomic="true"
-           aria-relevant="text"
-           class="mdl-snackbar mdl-js-snackbar">
+      <!-- MENSAJES -->
+      <div
+        id="confirmation-toast"
+        aria-live="assertive"
+        aria-atomic="true"
+        aria-relevant="text"
+        class="mdl-snackbar mdl-js-snackbar">
 
         <div class="mdl-snackbar__text"></div>
 
-        <button type="button"
-                class="mdl-snackbar__action">
+        <button
+          type="button"
+          class="mdl-snackbar__action">
         </button>
 
       </div>
@@ -220,16 +319,28 @@
 
 </div>
 
-<!-- Material Design Lite -->
+<!-- MATERIAL DESIGN LITE -->
 <script defer
         src="https://cdnjs.cloudflare.com/ajax/libs/material-design-lite/1.3.0/material.min.js">
 </script>
 
-<!-- JavaScript de UTEQGram -->
+
+<!-- FIREBASE SDK -->
+<script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-app-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-auth-compat.js"></script>
+
+<script src="https://www.gstatic.com/firebasejs/12.11.0/firebase-storage-compat.js"></script>
+
+<!-- CONFIGURACION FIREBASE -->
+<script src="/src/js/firebase-config.js"></script>
+
+<!-- JAVASCRIPT UTEQGRAM -->
 <script src="/src/js/idb.js"></script>
 <script src="/src/js/utility.js"></script>
 <script src="/src/js/app.js"></script>
-<script src="/src/js/feed.js"></script>
+<script src="/src/js/feed.js?v=camara-android-02"></script>
+
 
 </body>
 </html>
